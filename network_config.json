@@ -4,55 +4,64 @@
       "id": "dev-1",
       "name": "Main Router",
       "ip": "127.0.0.1",
-      "description": "Main"
-    },
-    "dev-1772509792097": {
-      "id": "dev-1772509792097",
-      "name": "New Device",
-      "ip": "192.168.1.1",
-      "description": "Switch"
+      "description": "Main",
+      "type": ""
     },
     "dev-1772509842475": {
       "id": "dev-1772509842475",
       "name": "Cloudflare DNS",
       "ip": "1.1.1.1",
-      "description": "DNS"
+      "description": "DNS",
+      "type": ""
     },
     "dev-1772509916357": {
       "id": "dev-1772509916357",
       "name": "none",
       "ip": "192.168.0.125",
-      "description": "Switch"
+      "description": "Switch",
+      "type": ""
     },
     "dev-1772510812330": {
       "id": "dev-1772510812330",
       "name": "New Device",
       "ip": "1.0.0.1",
-      "description": "Switch"
+      "description": "Switch",
+      "type": ""
     },
     "dev-1772510843833": {
       "id": "dev-1772510843833",
       "name": "New Device",
       "ip": "0.0.1.1",
-      "description": ""
+      "description": "",
+      "type": ""
     },
     "dev-1772517642084": {
       "id": "dev-1772517642084",
       "name": "Zenfone",
       "ip": "10.17.74.36",
-      "description": "Smartphone"
+      "description": "Smartphone",
+      "type": ""
+    },
+    "dev-1772518369113": {
+      "id": "dev-1772518369113",
+      "name": "New Device",
+      "ip": "192.168.1.1",
+      "description": "Switch",
+      "type": "device"
+    },
+    "dev-1772525432201": {
+      "id": "dev-1772525432201",
+      "name": "Google DNS",
+      "ip": "8.8.4.4",
+      "description": "DNS",
+      "type": "device"
     },
     "dev-2": {
       "id": "dev-2",
       "name": "Google DNS",
       "ip": "8.8.8.8",
-      "description": "Internet Gateway"
-    },
-    "dev-3": {
-      "id": "dev-3",
-      "name": "Dead Server",
-      "ip": "192.0.2.1",
-      "description": "Backup Storage"
+      "description": "Internet Gateway",
+      "type": ""
     }
   },
   "cables": [
@@ -62,20 +71,6 @@
       "to": "dev-2",
       "description": "1G",
       "status": "online"
-    },
-    {
-      "id": "cable-2",
-      "from": "dev-1",
-      "to": "dev-3",
-      "description": "10G",
-      "status": "offline"
-    },
-    {
-      "id": "cable-1772509804640",
-      "from": "dev-1",
-      "to": "dev-1772509792097",
-      "description": "1G",
-      "status": "offline"
     },
     {
       "id": "cable-1772509852313",
@@ -110,7 +105,21 @@
       "from": "dev-1",
       "to": "dev-1772517642084",
       "description": "573M",
-      "status": "unknown"
+      "status": "online"
+    },
+    {
+      "id": "cable-1772525461877",
+      "from": "dev-1",
+      "to": "dev-1772518369113",
+      "description": "",
+      "status": "offline"
+    },
+    {
+      "id": "cable-1772525478511",
+      "from": "dev-1772517642084",
+      "to": "dev-1772525432201",
+      "description": "eduroam",
+      "status": "online"
     }
   ]
 }
