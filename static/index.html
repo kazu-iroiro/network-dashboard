@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Dashboard</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="title">Network Dashboard v1.0</div>
+        <button class="btn-info" onclick="toggleMenu('info-modal')">i</button>
+        <button class="btn-add" onclick="toggleMenu('add-modal')">+</button>
+        <div id="mynetwork"></div>
+
+        <div id="context-menu" class="context-menu">
+            <div onclick="executeDelete()">🗑️ Delete (削除)</div>
+        </div>
+
+        <div id="info-modal" class="modal modal-info">
+            <span class="close-btn" onclick="toggleMenu('info-modal')">✖</span>
+            <ul>
+                <li>License</li>
+                <li onclick="backupData()">Backup</li>
+                <li onclick="document.getElementById('fileInput').click()">Load</li>
+            </ul>
+        </div>
+
+        <div id="add-modal" class="modal modal-add">
+            <span class="close-btn" onclick="toggleMenu('add-modal')">✖</span>
+            <ul>
+                <li onclick="addDeviceMode()">Add device</li>
+                <li onclick="addJointMode()">Add joint (中継点)</li>
+                <li onclick="addCableMode()">Add cable</li>
+            </ul>
+        </div>
+    </div>
+    
+    <input type="file" id="fileInput" style="display: none;" accept=".json" onchange="loadData(event)">
+
+    <div id="form-overlay" class="form-overlay">
+        <div id="form-device" class="form-modal" style="display:none;">
+            <h3>Add New Device</h3>
+            <div class="form-group"><label>Device Name</label><input type="text" id="input-dev-name" autocomplete="off"></div>
+            <div class="form-group"><label>IP Address</label><input type="text" id="input-dev-ip" autocomplete="off"></div>
+            <div class="form-group"><label>Description</label><input type="text" id="input-dev-desc" autocomplete="off"></div>
+            <div class="form-actions">
+                <button class="btn-cancel" onclick="cancelCustomForm()">Cancel</button>
+                <button class="btn-save" onclick="submitDeviceForm()">Add</button>
+            </div>
+        </div>
+        <div id="form-joint" class="form-modal" style="display:none;">
+            <h3>Add Joint (曲がり角)</h3>
+            <div class="form-group"><label>Label (省略可)</label><input type="text" id="input-joint-label" autocomplete="off"></div>
+            <div class="form-actions">
+                <button class="btn-cancel" onclick="cancelCustomForm()">Cancel</button>
+                <button class="btn-save" onclick="submitJointForm()">Add</button>
+            </div>
+        </div>
+        <div id="form-cable" class="form-modal" style="display:none;">
+            <h3>Connect Cable</h3>
+            <div class="form-group"><label>Description (省略可)</label><input type="text" id="input-cable-desc" autocomplete="off"></div>
+            <div class="form-actions">
+                <button class="btn-cancel" onclick="cancelCustomForm()">Cancel</button>
+                <button class="btn-save" onclick="submitCableForm()">Connect</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/static/app.js"></script>
+</body>
+</html>

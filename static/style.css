@@ -1,0 +1,37 @@
+html, body { font-family: sans-serif; margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; background-color: white; }
+.dashboard-container { position: relative; width: 100%; height: 100%; }
+.title { position: absolute; top: 15px; left: 20px; font-size: 18px; font-weight: bold; z-index: 10; border-bottom: 2px solid #8cc63f; padding-bottom: 2px;}
+.btn-info, .btn-add { position: absolute; right: 20px; width: 30px; height: 30px; border: 2px solid #333; border-radius: 6px; background: white; font-weight: bold; cursor: pointer; z-index: 10;}
+.btn-info { top: 15px; font-family: serif;}
+.btn-add { bottom: 15px; font-size: 18px;}
+#mynetwork { width: 100%; height: 100%; outline: none; cursor: crosshair;}
+
+.modal { display: none; position: absolute; background: white; border: 2px solid #333; border-radius: 8px; padding: 15px; z-index: 100; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);}
+.modal-info { top: 55px; right: 20px; width: 200px; }
+.modal-add { bottom: 55px; right: 20px; width: 180px; }
+.modal ul { list-style: none; padding: 0; margin: 0; }
+.modal ul li { padding: 8px 0; border-bottom: 1px solid #eee; cursor: pointer; }
+.modal ul li:hover { background-color: #f9f9f9; }
+.modal ul li:last-child { border-bottom: none; }
+.close-btn { text-align: right; cursor: pointer; font-weight: bold; margin-bottom: 10px; display: block;}
+
+.form-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); z-index: 1000; }
+.form-modal { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); width: 320px; border: 2px solid #333; }
+.form-modal h3 { margin-top: 0; border-bottom: 3px solid #8cc63f; padding-bottom: 8px; font-size: 18px; color: #333; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-size: 13px; margin-bottom: 5px; font-weight: bold; color: #555; }
+.form-group input { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; outline: none; }
+.form-group input:focus { border-color: #8cc63f; box-shadow: 0 0 5px rgba(140, 198, 63, 0.5); }
+.form-actions { text-align: right; margin-top: 25px; }
+.btn-save { background: #8cc63f; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px; transition: background 0.2s; }
+.btn-save:hover { background: #7ab332; }
+.btn-cancel { background: #f0f0f0; color: #333; border: 1px solid #ccc; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin-right: 10px; font-size: 14px; }
+.btn-cancel:hover { background: #e0e0e0; }
+
+/* 長押し・右クリック時のコンテキストメニュー(削除ボタン) */
+.context-menu {
+    display: none; position: absolute; background: white; border: 2px solid #333;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; border-radius: 6px; overflow: hidden;
+}
+.context-menu div { padding: 10px 20px; cursor: pointer; color: #d9534f; font-weight: bold; font-size: 14px; }
+.context-menu div:hover { background: #f9f9f9; }
