@@ -276,7 +276,7 @@ func startPingMonitor() {
 			}
 			dataMutex.Unlock()
 		}
-		time.Sleep(3 * time.Second)
+		time.Sleep(10 * time.Second)
 	}
 }
 
@@ -349,7 +349,7 @@ const indexHTML = `
 </head>
 <body>
     <div class="dashboard-container">
-        <div class="title">Network Dashboard v2.1</div>
+        <div class="title">Network Dashboard v1.0</div>
         <button class="btn-info" onclick="toggleMenu('info-modal')">i</button>
         <button class="btn-add" onclick="toggleMenu('add-modal')">+</button>
         <div id="mynetwork"></div>
